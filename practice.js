@@ -50,7 +50,7 @@ first(names, function(firstName){
 */
 
 function last(array,cb) {
-  cb(array.length - 1)
+  return cb(array[array.length - 1])
 }
 
 // Do not edit the code below.
@@ -69,8 +69,8 @@ last(names, function(lastName){
   Invoke the callback, passing in the product of the two numbers multiplied as the argument. 
 */
 
-function multiply(x, y, cb) {
-  cb(x*y)
+function multiply(num1, num2, cb) {
+  cb (num1*num2);
 }
 
 // Do not edit the code below.
@@ -118,7 +118,7 @@ contains(names, 'Colt', function(result){
 */
 
 function uniq(array, cb) {
-  
+ 
 }
 
 // Do not edit the code below.
@@ -137,7 +137,9 @@ uniq(names, function(uniqArr){
 */
 
 function each(array, cb) {
-  
+  for (var i = 0; i < array.length; i++){
+    cb(array[i], i)
+  }
 }
 
 // Do not edit the code below.
@@ -156,7 +158,11 @@ each(names, function(item, indice){
 */
 
 function getUserById(array, id, cb) {
-
+  for (var i = 0; i < array.length; i++) {
+    if (id === array[i].id){
+      return cb(array[i])
+    }
+  } 
 }
 
 // Do not edit the code below.
