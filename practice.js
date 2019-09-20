@@ -118,7 +118,10 @@ contains(names, 'Colt', function(result){
 */
 
 function uniq(array, cb) {
- 
+  var uniqArr = array.filter(function(cur, ind, array) {
+    return array.indexOf(cur) == ind
+  });
+  cb(uniqArr)
 }
 
 // Do not edit the code below.
